@@ -33,5 +33,6 @@ justify-content: center;
   margin: 5%;
 }
 .Selector {
-  
+  flex: 1;
+  height: 100%;
 }

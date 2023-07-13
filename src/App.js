@@ -3,6 +3,7 @@ import './App.css';
 import Header from './displayComponents';
 import CanvasDraw from 'react-canvas-draw';
 import { useState, useEffect } from 'react';
+import { ButtonGroup, Button } from '@mui/material';
 function App() {
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
   useEffect(() => {
@@ -19,7 +20,13 @@ function App() {
   return (<div className = "App">
     <Header/>
     <div className='PanelContainer'>
-    <div className='LeftPanel'><text>{screenSize.width} {screenSize.height}</text></div>
+    <div className='LeftPanel'>
+    <ButtonGroup className = "SelectionContainer" variant="contained" aria-label="outlined button group">
+  <Button className='Selector'>One</Button>
+  <Button className='Selector'>Two</Button>
+  <Button className='Selector'>Three</Button>
+</ButtonGroup>
+    </div>
     <div className='RightPanel'>
     <div className='Canvas'>
     <image src="./logo.svg"/>

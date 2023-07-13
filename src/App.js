@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './district.png';
 import './App.css';
 import Header from './displayComponents';
 import CanvasDraw from 'react-canvas-draw';
@@ -22,10 +22,13 @@ function App() {
     <div className='LeftPanel'><text>{screenSize.width} {screenSize.height}</text></div>
     <div className='RightPanel'>
     <div className='Canvas'>
+    <image src="./logo.svg"/>
     <CanvasDraw 
-    backgroundColor='blue'
-    canvasWidth= {screenSize.height/4}
-    canvasHeight= {screenSize.height/4}
+    imgSrc={logo}
+    brushColor='red'
+    enablePanAndZoom="true"
+    canvasWidth= {0.27*(screenSize.height+screenSize.width)}
+    canvasHeight= {0.27*(screenSize.height+screenSize.width)}
     />
     </div>
     </div>

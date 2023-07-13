@@ -22,6 +22,5 @@ display: flex;
 .RightPanel {
 width: 50%;
 display: flex;
-background-color: black;
 justify-content: center;
 }

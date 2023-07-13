@@ -1,5 +1,9 @@
 .headerContainer {
     background-color: #AFECE7;
-    min-height: 20vh;
-    min-width: 10;
+    height:10%;
+    width: 100%;
+}
+.buttonContainer {
+    height: 100%;
+    width:12%;
 }

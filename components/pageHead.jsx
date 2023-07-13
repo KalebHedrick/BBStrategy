@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import './pageHead.css';
 const maps = ["map1","map2","map3"]
 function Header() {
   
  
-  return (<div style={{backgroundColor:"red", height:"100%"}}> 
-
+  return (<div className='headerContainer'> 
+gi
     </div>
   )
 }

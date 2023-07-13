@@ -21,7 +21,7 @@ function App() {
     <Header/>
     <div className='PanelContainer'>
     <div className='LeftPanel'>
-    <ButtonGroup className = "SelectionContainer" variant="contained" aria-label="outlined button group">
+    <ButtonGroup color = "primary" className = "SelectionContainer" variant="contained" aria-label="outlined button group">
   <Button className='Selector'>One</Button>
   <Button className='Selector'>Two</Button>
   <Button className='Selector'>Three</Button>

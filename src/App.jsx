@@ -8,10 +8,12 @@ const maps = ["map1","map2","map3"]
 function App() {
   const [count, setCount] = useState(0)
   const [map, setMap] = useState(maps[0])
-  return (
+  return (<>
     
-    <Header/>
-    
+    <div><text>hi</text>
+    <CanvasDraw disabled = 'false' imgSrc='vite.svg'/>
+    </div>
+    </>
   )
 }
 

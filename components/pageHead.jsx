@@ -5,8 +5,7 @@ function Header() {
   
  
   return (<div className='headerContainer'> 
-<button className='ButtonContainer'>hi
-</button>
+<text className='textContainer'>BattleBit Strategy Maker</text>
 </div>
     
   )

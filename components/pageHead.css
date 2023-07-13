@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 .headerContainer {
-    background-color: #AFECE7;
+    background-color: #899E8B;
     height:10%;
     width: 100%;
+    align-items: center;
+    text-shadow: 3;
 }
-.buttonContainer {
+.textContainer {
     height: 100%;
-    width:12%;
+    width:100%;
+    border:none;
+    background: none;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    font-family: 'VT323', monospace;
+    font-size: 4em;
+    color: whitesmoke;
 }

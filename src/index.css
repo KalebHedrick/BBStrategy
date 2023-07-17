@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #F7E1AE !important;
-  overflow:hidden;
+ 
 }
 
 code {
@@ -61,6 +61,13 @@ flex:1
   align-content: center;
 }
 .map-image {
-
-zoom:200fr;
+background-color: red;
+object-fit:contain;
+width: 100%;
 }
+.mapContainer {
+  align-self:flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex: 1;
+  }

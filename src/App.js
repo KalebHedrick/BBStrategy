@@ -2,9 +2,9 @@ import map from './district.png';
 import './index.css';
 import Header from './displayComponents';
 import CanvasDraw from 'react-canvas-draw';
+import { Whiteboard } from 'react-whiteboard-pdf';
 import { useState, useEffect } from 'react';
 import { ButtonGroup, Button } from '@mui/material';
-import { Container } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
@@ -19,11 +19,11 @@ function App() {
     })
   }, [screenSize])
   
-  return (<div className = "container-fluid p-0">
+  return (<>
     <Header/>
-    <div className='row no-gutters'>
-    <div className='col-sm'>
-    <div className='d-flex'>
+    <div className='row container-fluid'>
+    <div className='col '>
+    <div className='d-flex justify-content-center'>
     <ButtonGroup color = "primary" className = "SelectionContainer" variant="contained" aria-label="outlined button group">
   <Button className='Selector'>One</Button>
   <Button className='Selector'>Two</Button>
@@ -31,13 +31,14 @@ function App() {
 </ButtonGroup>
     </div>
     </div>
-    <div className='col-sm'>
-    <div className='no-padding' style= {{backgroundColor: "Red"}}>
-    <img src={map} class="mx-auto d-block map-image"></img>
+    <div className='col p-5' align="center">
+    <div className='container-fluid'>
+    <Whiteboard/>
+    
     </div>
     </div>
     </div>
-    </div>);
+    </>);
 }
 function getCurrentDimension(){
   return {

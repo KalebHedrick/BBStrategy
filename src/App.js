@@ -1,9 +1,11 @@
-import logo from './district.png';
-import './App.css';
+import map from './district.png';
+import './index.css';
 import Header from './displayComponents';
 import CanvasDraw from 'react-canvas-draw';
 import { useState, useEffect } from 'react';
 import { ButtonGroup, Button } from '@mui/material';
+import { Container } from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
   useEffect(() => {
@@ -17,31 +19,25 @@ function App() {
     })
   }, [screenSize])
   
-  return (<div className = "App">
+  return (<div className = "container-fluid p-0">
     <Header/>
-    <div className='PanelContainer'>
-    <div className='LeftPanel'>
+    <div className='row no-gutters'>
+    <div className='col-sm'>
+    <div className='d-flex'>
     <ButtonGroup color = "primary" className = "SelectionContainer" variant="contained" aria-label="outlined button group">
   <Button className='Selector'>One</Button>
   <Button className='Selector'>Two</Button>
   <Button className='Selector'>Three</Button>
 </ButtonGroup>
     </div>
-    <div className='RightPanel'>
-    <div className='Canvas'>
-    <image src="./logo.svg"/>
-    <CanvasDraw 
-    imgSrc={logo}
-    brushColor='red'
-    enablePanAndZoom="true"
-    canvasWidth= {0.27*(screenSize.height+screenSize.width)}
-    canvasHeight= {0.27*(screenSize.height+screenSize.width)}
-    />
+    </div>
+    <div className='col-sm'>
+    <div className='no-padding' style= {{backgroundColor: "Red"}}>
+    <img src={map} class="mx-auto d-block map-image"></img>
     </div>
     </div>
     </div>
-    </div>
-  );
+    </div>);
 }
 function getCurrentDimension(){
   return {

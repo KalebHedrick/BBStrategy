@@ -16,7 +16,13 @@ const Canvas = ({
     } = useOnDraw(onDraw);
 
     function onDraw(ctx, point, prevPoint) {
+       
         drawLine(prevPoint, point, ctx, brushColor, 5);
+    //     var imageObj1 = new Image();
+    //     imageObj1.src = require('./district.png')
+    //  imageObj1.onload = function() {
+    //         ctx.drawImage(imageObj1,0,0);
+    //     }
     }
 
     function drawLine(
@@ -26,11 +32,7 @@ const Canvas = ({
         color,
         width
     ) {
-        var imageObj1 = new Image();
-    imageObj1.src = 'https://s-media-cache-ak0.pinimg.com/236x/d7/b3/cf/d7b3cfe04c2dc44400547ea6ef94ba35.jpg'
- imageObj1.onload = function() {
-        ctx.drawImage(imageObj1,0,0);
-    }
+        
         start = start ?? end;
         ctx.beginPath();
         ctx.lineWidth = width;

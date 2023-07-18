@@ -36,8 +36,8 @@ function App() {
     
     <div style={{}}>
     <Canvas
-        width={screenSize.width}
-        height={screenSize.height}
+        width={screenSize.width/2.5}
+        height={screenSize.height/2}
         brushColor={"#ABCEFF"}
         
       />

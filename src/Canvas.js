@@ -1,5 +1,6 @@
 import { Backdrop } from '@mui/material';
-import {useOnDraw} from './Hooks';
+import { useOnDraw, InitCanvas } from './Hooks';
+import React, { useEffect } from 'react';
 
 const Canvas = ({
     width,
@@ -9,20 +10,21 @@ const Canvas = ({
     StrokeSize,
 
 }) => {
-
     const {
         setCanvasRef,
         onCanvasMouseDown
-    } = useOnDraw(onDraw);
+    } = InitCanvas(onDraw, drawBackground);
+
+    function drawBackground(ctx) {
+        var imageObj1 = new Image();
+        imageObj1.src = require('./district.png')
+        imageObj1.onload = function () {
+            ctx.drawImage(imageObj1, 0, 0);
+        }
+    }
 
     function onDraw(ctx, point, prevPoint) {
-       
         drawLine(prevPoint, point, ctx, brushColor, 5);
-    //     var imageObj1 = new Image();
-    //     imageObj1.src = require('./district.png')
-    //  imageObj1.onload = function() {
-    //         ctx.drawImage(imageObj1,0,0);
-    //     }
     }
 
     function drawLine(
@@ -32,7 +34,7 @@ const Canvas = ({
         color,
         width
     ) {
-        
+
         start = start ?? end;
         ctx.beginPath();
         ctx.lineWidth = width;
@@ -40,7 +42,7 @@ const Canvas = ({
         ctx.moveTo(start.x, start.y);
         ctx.lineTo(end.x, end.y);
         ctx.stroke();
-       
+
         ctx.fillStyle = color;
         ctx.beginPath();
         ctx.arc(start.x, start.y, 2, 0, 2 * Math.PI);
@@ -48,14 +50,14 @@ const Canvas = ({
 
     }
 
-    return(
+    return (
         <canvas
             width={width}
             height={height}
             onMouseDown={onCanvasMouseDown}
             style={canvasStyle}
             ref={setCanvasRef}
-            
+
         />
     );
 
@@ -65,5 +67,5 @@ export default Canvas;
 
 const canvasStyle = {
     border: "1px solid black",
-    
+
 }

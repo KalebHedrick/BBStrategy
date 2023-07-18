@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export function useOnDraw(onDraw) {
+export function InitCanvas(onDraw, drawBackground) {
 
     const canvasRef = useRef(null);
     const isDrawingRef = useRef(false);
@@ -30,6 +30,7 @@ export function useOnDraw(onDraw) {
             }
 
         }
+
         function initMouseMoveListener() {
             const mouseMoveListener = (e) => {
                 if (isDrawingRef.current && canvasRef.current) {
@@ -62,11 +63,12 @@ export function useOnDraw(onDraw) {
             }
         }
 
+        drawBackground(canvasRef.current.getContext('2d'));
         initMouseMoveListener();
         initMouseUpListener();
         return () => cleanup();
 
-    }, [onDraw]);
+    }, [onDraw, drawBackground]);
 
     return {
         setCanvasRef,

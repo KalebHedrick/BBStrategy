@@ -1,1 +1,1 @@
-A strategy maker for BattleBit Remastered (unfinished)
+A strategy maker for BattleBit Remastered (in Progress)
